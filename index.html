@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="search-form">
+            <form action="#">
+                <input type="search" placeholder="Enter a city…" required>
+                <input type="button" value="Search">
+            </form>
+        </header>
+        <hr>
+        <main>
+            <div class="current-weather">
+                <div>
+                    <h1 class="current-city">Laurel</h1>
+                    <p>Sunday 00:00, mostly sunny <br>
+                        Humidity: <span id="humidity">NA</span>,
+                        Wind: <span id="wind">NA</span>
+                    </p>
+                </div>
+                <div class="current-temp">
+                    <span class="weather-icon">☀️</span>53<span class="current-temp-unit">°F</span>
+                </div>
+            </div>
+            <div class="forecast">
+                <ul>
+                    <li>Mon<br>
+                        🌤️<br>
+                        43° 35°
+                    </li>
+                    <li>Tue<br>
+                        🌤️<br>
+                        48° 41°
+                    </li>
+                    <li>Wed<br>
+                        🌤️<br>
+                        37° 33°
+                    </li>
+                    <li>Thu<br>
+                        🌤️<br>
+                        54° 47°
+                    </li>
+                    <li>Fri<br>
+                        🌤️<br>
+                        44° 39°
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <p>This project was coded by <a href="#">Rebekka S.</a> and is on <a href="#">Github</a> and <a
+                    href="`#">hosted on Netlify</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
