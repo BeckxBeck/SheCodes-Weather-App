@@ -16,19 +16,22 @@
 <body>
     <div class="container">
         <header class="search-form">
-            <form action="#">
-                <input type="search" placeholder="Enter a city…" required>
-                <input type="button" value="Search">
+            <form id="search-form">
+                <input id="search-input" type="search" placeholder="Enter a city…" required autofocus />
+                <input id="search-button" type="submit" value="Search" />
             </form>
         </header>
-        <hr>
+        <hr />
         <main>
             <div class="current-weather">
                 <div>
                     <h1 class="current-city">Laurel</h1>
-                    <p>Sunday 00:00, mostly sunny <br>
-                        Humidity: <span id="humidity">NA</span>,
-                        Wind: <span id="wind">NA</span>
+                    <p class="current-details">
+                        <span id="current-day">Sunday</span>
+                        <span id="hour">00</span>:<span id="minute">00</span>, mostly
+                        sunny <br />
+                        Humidity: <span class="strong" id="humidity">NA</span>, Wind:
+                        <span class="strong" id="wind">N/A</span>
                     </p>
                 </div>
                 <div class="current-temp">
@@ -66,6 +69,7 @@
                     href="`#">hosted on Netlify</a></p>
         </footer>
     </div>
+    <script src="src/script.js"></script>
 </body>
 
 </html>

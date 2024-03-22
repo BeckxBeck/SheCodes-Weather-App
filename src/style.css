@@ -72,7 +72,7 @@ input:last-of-type {
     justify-content: space-between;
 }
 
-.current-weather p span {
+.strong {
     color: rgb(246, 82, 130);
     font-weight: 500;
 }
