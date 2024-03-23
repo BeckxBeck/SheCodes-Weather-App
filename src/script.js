@@ -25,40 +25,27 @@ function getDate() {
     "Friday",
     "Saturday",
   ]
-
+  let currentDay = weekdays[now.getDay()]
   let hour = now.getHours();
   let minute = now.getMinutes();
   
-  let currentDay = document.querySelector("#current-day");
-  let currentHour = document.querySelector("#hour");
-  let currentMinute = document.querySelector("#minute")
-  
-  currentDay.innerHTML = weekdays[now.getDay()]
+  let currentDateInfo = document.querySelector("#current-date-info")
+
   
   if(hour > 12) {
-    currentHour.innerHTML = hour-12;  
-  } else {
-    currentHour.innerHTML = hour;
+    hour = hour-12;  
   }
   
-// fix the conditional below...
-
+  // add Ante/Post Meridiem conditional
+  
   if(minute < 10) {
-    currentMinute.innerHTML = `0${minute}`;
-    if(hour>12) {
-      currentMinute.innerHTML = `0${minute}PM`;
-    } else {
-      currentMinute.innerHTML = `0${minute}AM`;
-    }
+    minute = `0${minute}`;
+    
   } else {
-    currentMinute.innerHTML = minute;
-    if(hour>12) {
-      currentMinute.innerHTML = `${minute} PM`;
-    } else {
-      currentMinute.innerHTML = `${minute} AM`;
-    }
+    minute = minute;
   }
   
+  currentDateInfo.innerHTML = `${currentDay} ${hour}:${minute}`
 }
 
 setInterval(getDate, 1000)
