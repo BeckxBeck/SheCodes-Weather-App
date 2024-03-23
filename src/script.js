@@ -1,17 +1,3 @@
-// if the city = undefined, none of the variables can be assigned values so the else statement will 
-// never execute. First I have to check if the city exists in the weather object, THEN I can assign 
-// the values
-
-// if(weather[city]) {
-//     let temp = weather[city].temp;
-//     let humidity = weather[city].humidity;
-//     let cTemp = Math.round(temp);
-//     let fTemp = Math.round((temp * 9/5) + 32 );
-//     alert(`It is currently (${cTemp}C°/${fTemp}F°) in ${city} with a humidity of ${humidity}.`);
-// } else {
-//     alert(`Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`)
-// };
-
 // Time/Date function
 function getDate() {
   let now = new Date();
@@ -53,10 +39,6 @@ setInterval(getDate, 1000)
 
 
 
-
-
-
-
 // City search engine function *START HERE after reading comments 
 function searchCity(event) {
   event.preventDefault();
@@ -74,8 +56,6 @@ searchForm.addEventListener("submit", searchCity)
 
 // axios.get(weatherUrl).then(searchCity) 
 // gotta change the name of the function or modify it (nest functions? change exising function to submitForm and nest the actual searchCity func)
-// modify if statement to show 'Ante Meridiem' and 'Post Meridiem'
-// assign the condition, temperature, humidity, and wind elements to a variable
 
 /* Instructions
   The date area should show the current time and date
