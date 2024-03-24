@@ -25,7 +25,6 @@ function getDate() {
     meridiem = "am"
   };
   
-  // add Ante/Post Meridiem conditional
   
   if(minute < 10) {
     minute = `0${minute}`;
@@ -42,17 +41,27 @@ setInterval(getDate, 1000);
 
 
 
-// City search engine function *START HERE after reading comments 
-
-
 
 function searchCity(event) {
   event.preventDefault();
   
-  let currentCityElement = document.querySelector(".current-city")
-  currentCityElement.innerHTML = searchInput.value
-
+  /* assign elements to variables so the elements update 
+  depending on the current city 
+  ie. humidity, wind (others already done below)*/
   function displayCityInfo(response) {
+    if(response.data.status == "not_found") {
+      /* find the google url found in previous lessons/challenges */
+      alert("City not found. Please try again.")
+      return
+    }
+
+    let currentCityEl = document.querySelector(".current-city")
+    let currentTempEl = document.querySelector("#current-temp")
+    let currentConditionEl = document.querySelector("#current-condition") 
+
+    currentCityEl.innerHTML = response.data.city
+    currentTempEl.innerHTML = Math.round(response.data.temperature.current)
+    currentConditionEl.innerHTML = response.data.condition.description
     console.log(response.data)
   }
   let weatherUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=imperial`;
@@ -60,16 +69,10 @@ function searchCity(event) {
 }
 
 
-
+ 
 
 let apiKey = "333a6dab9tcf6097oe954a0dcb8f80ec";
 let searchInput = document.querySelector("#search-input")
 
 let searchForm = document.querySelector("#search-form")
 searchForm.addEventListener("submit", searchCity)
-
-// gotta change the name of the function or modify it (nest functions? change exising function to submitForm and nest the actual searchCity func)
-
-/* Instructions
-  The date area should show the current time and date
-   */
