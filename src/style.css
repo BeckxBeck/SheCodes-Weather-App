@@ -81,7 +81,7 @@ input:last-of-type {
     font-weight: 900;
 }
 
-.weather-icon {
+.current-weather-icon {
     position: relative;
     top: -15px;
     font-size: 40px;

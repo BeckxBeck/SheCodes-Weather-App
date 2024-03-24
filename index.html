@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -27,14 +29,15 @@
                 <div>
                     <h1 class="current-city">Laurel</h1>
                     <p class="current-details">
-                        <span id="current-date-info">Sunday 00:00</span>,
+                        <span id="current-date-info">Sunday 00:00</span><span id="meridiem"></span>,
                         <span class="current-condition">mostly sunny</span><br />
                         <span id="humidity">Humidity: <span class="strong">NA</span></span>,
                         <span id="wind">Wind: <span class="strong">NA</span></span>
                     </p>
                 </div>
                 <div class="current-temp">
-                    <span class="weather-icon">☀️</span>53<span class="current-temp-unit">°F</span>
+                    <span class="current-weather-icon">☀️</span><span id="current-temp">53</span><span
+                        class="current-temp-unit">°F</span>
                 </div>
             </div>
             <div class="forecast">
@@ -64,8 +67,10 @@
         </main>
         <hr>
         <footer>
-            <p>This project was coded by <a href="#">Rebekka S.</a> and is on <a href="#">Github</a> and <a
-                    href="`#">hosted on Netlify</a></p>
+            <p>This project was coded by <a href="#">Rebekka S.</a> and is on
+                <a target="_blank" href="https://github.com/BeckxBeck/SheCodes-Weather-App">Github</a> and
+                <a href="`#">hosted on Netlify</a>
+            </p>
         </footer>
     </div>
     <script src="src/script.js"></script>
