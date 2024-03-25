@@ -45,24 +45,25 @@ setInterval(getDate, 1000);
 function searchCity(event) {
   event.preventDefault();
   
-  /* assign elements to variables so the elements update 
-  depending on the current city 
-  ie. humidity, wind (others already done below)*/
   function displayCityInfo(response) {
     if(response.data.status == "not_found") {
       /* find the google url found in previous lessons/challenges */
       alert("City not found. Please try again.")
       return
     }
-
+    
     let currentCityEl = document.querySelector(".current-city")
     let currentTempEl = document.querySelector("#current-temp")
     let currentConditionEl = document.querySelector("#current-condition") 
+    let currentHumidityEl = document.querySelector("#humidity")
+    let currentWindSpeedEl = document.querySelector("#wind")
 
     currentCityEl.innerHTML = response.data.city
     currentTempEl.innerHTML = Math.round(response.data.temperature.current)
-    currentConditionEl.innerHTML = response.data.condition.description
-    console.log(response.data)
+    currentConditionEl.innerHTML = response.data.condition.description;
+    currentHumidityEl.innerHTML = response.data.temperature.humidity;
+    // add conditional for metric data (meter/sec)
+    currentWindSpeedEl.innerHTML = `${Math.round(response.data.wind.speed)}mph`
   }
   let weatherUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=imperial`;
   axios.get(weatherUrl).then(displayCityInfo) 
