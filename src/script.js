@@ -1,4 +1,5 @@
 // Time/Date function
+/* refactor date function so I can pass any date as the parameters */
 function getDate() {
   let now = new Date();
   
@@ -18,12 +19,17 @@ function getDate() {
   let currentDateInfo = document.querySelector("#current-date-info");
   let meridiem = document.querySelector("#meridiem");
 
+  // consolidate the conditionals below for the hour
   if(hour > 12) {
     hour = hour-12;  
     meridiem = "pm"
   } else {
     meridiem = "am"
   };
+
+  if(hour == 0) {
+    hour = 12
+  }
   
   
   if(minute < 10) {
@@ -41,7 +47,7 @@ setInterval(getDate, 1000);
 
 
 
-
+// refactor this function by referencing https://rebrand.ly/2aa9b5
 function searchCity(event) {
   event.preventDefault();
   
